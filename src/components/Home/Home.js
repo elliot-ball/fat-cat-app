@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { updatePreferences } from "../../redux/actions";
 // import { Link } from '@reach/router';
 import Slider, { Range } from 'rc-slider';
 import Div100vh from 'react-div-100vh';
@@ -116,6 +118,16 @@ class Home extends Component {
   //     // descriptionClasses: 'slider-description ' + borderDirection
   //   });
   // }
+
+  submit() {
+    const preferences = {
+      lootBoxTier: this.state.lootBoxTier,
+      adTier: this.state.adTier,
+      timerTier: this.state.timerTier
+    };
+    this.props.updatePreferences(preferences);
+    console.log(preferences);
+  }
 
   render() {
     console.log(this.state.lastTouched);
@@ -255,6 +267,7 @@ class Home extends Component {
             <RouterNavLink
               to="/results"
               exact
+              onClick={(e) => this.submit(e)}
               // activeClassName="router-link-exact-active"
             >
               Find games
@@ -267,4 +280,10 @@ class Home extends Component {
   }
 }
 
-export default Home;
+
+export default connect(
+  null,
+  { updatePreferences }
+  )(Home);
+
+// export default Home;

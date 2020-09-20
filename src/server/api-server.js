@@ -7,9 +7,10 @@ const jwksRsa = require("jwks-rsa");
 const { resolve } = require("path");
 
 require("dotenv").config({
-  path: resolve(process.cwd(), "src", "server", ".env"),
+  path: resolve(process.cwd(), ".env"),
 });
-
+console.log(resolve(process.cwd(), ".env"));
+// console.log(process.env);
 const app = express();
 
 const port = process.env.API_PORT;

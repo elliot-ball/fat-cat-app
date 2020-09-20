@@ -18,7 +18,7 @@ const App = () => {
   }
   return (
     <div id="app" className="d-flex flex-column h-100">
-      {/* <NavBar /> */}
+      <NavBar />
       <Div100vh className="vh100">
         <Switch>
           <Route path="/" exact component={HomeView} />
