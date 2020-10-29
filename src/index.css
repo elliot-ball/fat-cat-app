@@ -16,6 +16,7 @@ nav-item {
 
 /* utilities */
 .pull-right { float: right; }
+.flex { display: flex; }
 
 /* new grid */
 
@@ -266,41 +267,6 @@ nav-item {
 .search-button a {
   width: 100%;
   color: #000000;
-}
-
-.app-icon {
-  width: 50px;
-  float: left;
-}
-
-img { width: 100%; }
-
-.list-item-container {
-  position: relative;
-  display: block;
-  padding: 0.75rem 1.25rem;
-  margin-bottom: -1px;
-}
-
-.list-item {
-  width: 100%;
-  background: #674172;
-  padding: 15px;
-  border-radius: 10px;
-  border: 4px solid #000000;
-}
-
-.item-name {
-  color: #fff;
-  padding-left: 60px;
-}
-
-.playstore-btn {
-  float: right;
-}
-
-.item-title-container {
-  height: 70px;
 }
 
 .icon-tier-container {

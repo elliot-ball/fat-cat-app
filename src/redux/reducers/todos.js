@@ -7,7 +7,11 @@ import {
 const initialState = {
   allIds: [],
   byIds: {},
-  preferences: { lol: 'memes' }
+  preferences: {
+    lootBoxTier: 5,
+    adTier: 5,
+    timerTier: 3
+  }
 };
 
 export default function(state = initialState, action) {

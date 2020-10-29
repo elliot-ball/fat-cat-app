@@ -15,15 +15,18 @@
     "highlight.js": "^10.1.1",
     "jwks-rsa": "^1.8.1",
     "morgan": "^1.10.0",
+    "pg": "^8.3.3",
     "rc-slider": "^8.7.1",
-    "react-div-100vh": "^0.3.8",
-    "react-icons": "^3.11.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
+    "react-div-100vh": "^0.3.8",
     "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
+    "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "react-syntax-highlighter": "^12.2.1"
+    "react-syntax-highlighter": "^12.2.1",
+    "redux": "^4.0.5"
   },
   "scripts": {
     "start": "react-scripts start",

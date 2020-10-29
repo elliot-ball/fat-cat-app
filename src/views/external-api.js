@@ -10,13 +10,39 @@ export const ExternalApi = () => {
 
   const { getAccessTokenSilently } = useAuth0();
 
+  const snakeKeysToCamel = (snakeObject) => {
+    var camelObject = {};
+    for (var snakeKey in snakeObject) {
+        if (snakeObject.hasOwnProperty(snakeKey)) {
+            const camelKey = snakeKey.replace(/_\w/g, function(match) {
+                return match[1].toUpperCase();
+            });
+            camelObject[camelKey] = snakeObject[snakeKey];
+            if (camelObject[camelKey] !== null && typeof camelObject[camelKey] === 'object') {
+                camelObject[camelKey] = snakeKeysToCamel(camelObject[camelKey]);
+            }
+        }
+    }
+    return camelObject;
+  };
+
   const callApi = async () => {
     try {
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify([{
+          lootBoxTier: 3,
+          adTier: 3,
+          timerTier: 3
+        }])
+    };
       // const response = await fetch(`${apiUrl}/api/public-message`);
-      const response = await fetch(`http://localhost:7000/api/public-message`);
+      const response = await fetch(`http://localhost:7000/api/list`, requestOptions);
 
       const responseData = await response.json();
-
+      console.log(responseData);
+      console.log(snakeKeysToCamel(responseData));
       setMessage(responseData);
     } catch (error) {
       setMessage(error.message);
