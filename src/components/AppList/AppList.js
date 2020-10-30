@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ReactDOM} from 'react';
-import { FaGooglePlay, FaBan, FaMoneyBillAlt, FaBoxOpen, FaNewspaper, FaStopwatch } from 'react-icons/fa';
+import { FaGooglePlay, FaBan, FaMoneyBillAlt, FaBoxOpen, FaNewspaper, FaStopwatch, FaStar } from 'react-icons/fa';
 import obsessiveAdsIcon from '../../images/obsessive-ads.png';
 import obtrusiveAdsIcon from '../../images/obtrusive-or-infrequent-ads.png';
 import skippableAdsIcon from '../../images/skippable-ads.png';
@@ -131,75 +131,61 @@ const AppList = ({preferences}) => {
 
       let app = snakeKeysToCamel(item);
       let tags = getTags(app);
+      let tier = Math.floor(app.fcScore / 10);
       console.log(app);
       return (
         <div className="list-item-container d-flex" key={index}>
           <div className="list-item">
+            <div className="item-fc-score">
+              <div className="score-container">
+                {/* <div className="score-label">SCORE</div> */}
+                <div className={'score tier-' + tier}>{app.fcScore - 1}</div>
+              </div>
+            </div>
             <div className="item-title-container">
               <div>
                 <div className="app-icon">
                   <img src={app.icon}/>
                 </div>
-                <div className="item-name text-left align-self-start">
-                  {app.title}
-                </div>
-                <div className="item-developer text-left align-self-start">
-                  {app.developer}
-                  <div className="item-gp-score">
-                    {app.scoreText}
+                <div>
+                  <div className="item-name text-left align-self-start">
+                    {app.title}
                   </div>
                 </div>
-                <div className="item-genre">
-                  {app.genre}
-                </div>
-                <div className="">
-                  {app.summary}
-                </div>
-                <div className="tag-container">{tags}</div>
-                {/* <div>
-                  Contains:
-                  <div className="flex">{tags}</div>
-                </div> */}
               </div>
-              <div>
-                <div className="item-fc-score">
-                  {app.fcScore}
-                </div>
-              </div>
-            </div>
-            <div className="icon-tier-container">
-              <div className="icon-tier">
-                {/* <img src={obsessiveAdsIcon}/> */}
-                <h4>{app.lootBoxTier}</h4>
-              </div>
-              <div className="icon-tier">
-                {/* <img src={optionalAdsIcon}/> */}
-                <h4>{app.adTier}</h4>
-              </div>
-              <div className="icon-tier">
-                {/* <img src={skippableAdsIcon}/> */}
-                <h4>{app.timerTier}</h4>
-              </div>
-            </div>
+            </div>          
+            
             <div>
-                {/* Microtransactions? */}
+                  {/* <div className="item-gp-score">
+                  </div> */}
+              <div className="item-genre">
+                <FaStar className="icon-adjust" /> {app.genre} <FaStar className="icon-adjust" /> {app.scoreText}
+              </div>
+              <div className="item-summary">
+                {app.summary}
+              </div>
+              <div className="tag-container">{tags}</div>
+              {/* <div>
+                Contains:
+                <div className="flex">{tags}</div>
+              </div> */}
             </div>
-            <div
-              className="btn-group align-self-end playstore-btn"
-              role="group"
-              aria-label="Meeting Options"
+          </div>
+          {/* <div
+            className="btn-group align-self-end playstore-btn"
+            role="group"
+            aria-label="Meeting Options"
+          >
+            <a
+              className="btn btn-sm btn-outline-light"
+              title="View in Google playstore"
+              href={app.url}
+              target="_BLANK"
             >
-              <a
-                className="btn btn-sm btn-outline-light"
-                title="View in Google playstore"
-                href={app.url}
-                target="_BLANK"
-              >
-                <FaGooglePlay />
-              </a>
+              <FaGooglePlay />
+            </a>
 
-            </div>
-          </div>          
+          </div> */}
         </div>
       );
     });

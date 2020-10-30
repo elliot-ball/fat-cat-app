@@ -1,6 +1,8 @@
 .app-icon {
     width: 50px;
     float: left;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 img {
@@ -9,7 +11,6 @@ img {
 
 .list-item-container {
     position: relative;
-    height: 320px;
     display: block;
     padding: 0.75rem 1.25rem;
     margin-bottom: -1px;
@@ -21,7 +22,7 @@ img {
     background: #5b2f56;
     padding: 15px;
     border-radius: 10px;
-    border: 4px solid #000000;
+    border: 4px solid #492544;
 }
 
 .item-name {
@@ -30,16 +31,25 @@ img {
     font-style: 16px;
 }
 
-.item-developer {
-    color: #fff;
+.item-gp-score {
+    color: #bdabbb;
     padding-left: 60px;
     font-style: 10px !important;
 }
 
+.icon-adjust {
+    margin-top: -5px;
+}
+
 .item-genre {
     color: #fff;
-    padding-left: 60px;
     font-style: 10px !important;
+    margin: 5px 0;
+}
+
+.item-summary {
+    color: #fff;
+    margin-bottom: 10px;
 }
 
 .playstore-btn {
@@ -47,9 +57,9 @@ img {
 }
 
 .item-title-container {
-    height: 70px;
-    display: flex;
-    justify-content: space-between;
+    height: 55px;
+    /* display: flex; */
+    /* justify-content: space-between; */
 }
 
 .tag-container {
@@ -58,8 +68,6 @@ img {
 }
 
 .item-tag {
-    background: #28a745;
-    border: 1px solid #0c4319;
     border-radius: 5px;
     padding: 5px 8px;
     margin: 0 5px 5px 0;
@@ -68,7 +76,38 @@ img {
     font-weight: 100;
 }
 
+/* tag colour tiers */
+
 .good {
+    /* background: #ffffff; */
+    /* color: #000000; */
+    color: #fff;
+    border: 2px solid #fff;
+}
+.ok {
+    background: #C8CCCF;
+    color: #000000;
+    color: #fff;
+    /* border: 2px solid #c09c0c; */
+}
+.bad {
+    background: #91989F;
+    color: #000000;
+    color: #fff;
+    /* border: 2px solid #b8641b; */
+}
+.terrible {
+    background: #59656F;
+    color: #ffffff;
+    /* border: 2px solid #b83c30; */
+}
+.worst {
+    background: #22313F;
+    color: #ffffff;
+    /* border: 2px solid #992d22; */
+}
+/* old traffic light colours */
+/* .good {
     background: #27ae60;
     border: 2px solid #1f8b4c;
 }
@@ -87,4 +126,214 @@ img {
 .worst {
     background: #c0392b;
     border: 2px solid #992d22;
+} */
+
+.item-fc-score {
+    
+}
+
+.score-container {
+    float: right;
+    background: repeating-linear-gradient( to bottom, #0f0a1e, #0f0a1e 2px, #201938 2px, #341061 4px );
+    width: 60px;
+    height: 50px;
+    padding: 15px 15px 10px 15px;
+    /* border: 3px solid #492544; */
+    border-radius: 10px;
+}
+
+.score-label {
+    color: #F39C12;
+    font-family: 'Press Start 2P', cursive;
+    margin-top: -23px;
+    margin-left: -15px;
+    font-size: 10px;
+    letter-spacing: 7px;
+    text-shadow:
+        -2px 0 0 #c27c0e,
+        -4px 0 0 #aa6d0c,
+        2px 0 0 #f5af41,
+        4px 0 0 #f6b959;
+}
+
+.score {
+    position: relative;
+    margin-left: -5px;
+    margin-top: -2px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+
+.tier-10 {
+    color: #27ae60;
+    text-shadow:
+        -2px 0 0 #1b7943,
+        -4px 0 0 #135730,
+        2px 0 0 #52be7f,
+        4px 0 0 #7dce9f;
+}
+
+.tier-9 {
+    color: #38A15A;
+    text-shadow:
+        -2px 0 0 #27703e,
+        -4px 0 0 #1c502d,
+        2px 0 0 #5fb37a,
+        4px 0 0 #87c69c;
+}
+
+.tier-8 {
+    color: #499454;
+    text-shadow:
+        -2px 0 0 #33673a,
+        -4px 0 0 #244a2a,
+        2px 0 0 #6da976,
+        4px 0 0 #91be98;
+}
+
+.tier-7 {
+    color: #5A874E;
+    text-shadow:
+        -2px 0 0 #3e5e36,
+        -4px 0 0 #2d4327,
+        2px 0 0 #7a9f71,
+        4px 0 0 #9cb794;
+}
+
+.tier-6 {
+    color: #6B7A48;
+    text-shadow:
+        -2px 0 0 #4a5532,
+        -4px 0 0 #353d24,
+        2px 0 0 #88946c,
+        4px 0 0 #a6af91;
+}
+
+.tier-5 {
+    color: #7C6D43;
+    text-shadow:
+        -2px 0 0 #564c2e,
+        -4px 0 0 #3e3621,
+        2px 0 0 #968a68,
+        4px 0 0 #b0a78e;
+}
+
+.tier-4 {
+    color: #8D603D;
+    text-shadow:
+        -2px 0 0 #62432a,
+        -4px 0 0 #46301e,
+        2px 0 0 #a37f63,
+        4px 0 0 #ba9f8a;
+}
+
+.tier-3 {
+    color: #9E5337;
+    text-shadow:
+        -2px 0 0 #6e3a26,
+        -4px 0 0 #4f291b,
+        2px 0 0 #b1755e,
+        4px 0 0 #c49787;
+}
+
+.tier-2 {
+    color: #AF4631;
+    text-shadow:
+        -2px 0 0 #7a3122,
+        -4px 0 0 #572318,
+        2px 0 0 #bf6a5a,
+        4px 0 0 #cf9083;
+}
+
+.tier-1 {
+    color: #C0392B;
+    text-shadow:
+        -2px 0 0 #86271e,
+        -4px 0 0 #601c15,
+        2px 0 0 #cc6055,
+        4px 0 0 #d9887f;
+}
+
+
+
+/* score font effect */
+h1 {
+	font-family: 'Rig Bold Face', sans-serif;
+	text-transform: uppercase;
+	font-size: 18vw;
+	text-align: center;
+	font-weight: normal;
+	margin: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+    color: #91d4ff;
+}
+
+	h1:before,
+	h1:after, 
+	h1 span:before, 
+	h1 span:after {
+		content: attr(data-heading);
+		position: absolute;
+		overflow: hidden;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 5;
+		font-weight: normal;
+		text-shadow: none;
+	}
+	
+	h1:before {
+ 		color: #fff;
+ 		font-family: 'Rig Bold Inline', sans-serif;
+	}
+	
+	h1:after {
+ 		font-family: 'Rig Bold Coarse', sans-serif;
+ 		color: #040351;
+	}
+
+
+span::before {
+		font-family: 'Rig Bold Shadow', sans-serif;
+		color: #cbc7e3;
+		z-index: -1;
+	}
+    
+span::after {
+		font-family: 'Rig Bold Extrude', sans-serif;
+		color: #4d8bea;
+		z-index: -1;	
+	}
+
+
+
+
+@font-face {
+	font-family:'Rig Bold Coarse'; 
+	src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Rig-BoldCoarse.otf');
+}
+
+@font-face {
+	font-family:'Rig Bold Extrude'; 
+	src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Rig-BoldExtrude.otf');
+}
+
+@font-face {
+	font-family:'Rig Bold Shadow'; 
+	src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Rig-BoldShadow.otf');
+}
+
+@font-face {
+	font-family:'Rig Bold Face'; 
+	src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Rig-BoldFace.otf');
+}
+
+@font-face {
+	font-family:'Rig Bold Inline'; 
+	src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Rig-BoldInline.otf');
 }
