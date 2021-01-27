@@ -133,6 +133,18 @@ const AppList = ({preferences}) => {
       let tags = getTags(app);
       let tier = Math.floor(app.fcScore / 10);
       console.log(app);
+
+      let fileId;
+      let iconUrl = app.icon;
+      let matches = app.icon.match(/(?:https:\/\/(?:(?:[a-z]|[0-9]|-)*\.?)+)\/(.+)/);
+      console.log(matches);
+      if (matches !== null) {
+          fileId = matches[1];
+          console.log(fileId);
+          iconUrl = `http://localhost:7000/${fileId}.png`;
+      }
+
+
       return (
         <div className="list-item-container d-flex" key={index}>
           <div className="list-item">
@@ -145,7 +157,7 @@ const AppList = ({preferences}) => {
             <div className="item-title-container">
               <div>
                 <div className="app-icon">
-                  <img src={app.icon}/>
+                  <img src={iconUrl}/>
                 </div>
                 <div>
                   <div className="item-name text-left align-self-start">
